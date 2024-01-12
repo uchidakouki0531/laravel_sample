@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,38 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/about', function () {
-    return "About Page!!!";
-});
-
-
-
-//アマゾンの商品のようなルーティング
-Route::get('/item/{id}', function ($id) {
-    $message="商品IDは{$id}";
-    return $message;
-});
-
-//google検索のようなルーティング
-// Route::get('/search', function (Request $request) {
-//     //dd($request);
-//     //$keyword=$request->q;
-//     //$message="キーワードは($keyword)です";
-    
-//     $data=[
-//         'keyword'=>$request->q
-//     ];
-//     return view('search',$data);
-// });
-
-Route::post('/hello', function () {
-    $message="こんにちは"
-    return view('welcome');
-});
-
-Route::get('/about',[HomeController::class,'about']);
-Route::get('/about',[HomeController::class,'search']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
